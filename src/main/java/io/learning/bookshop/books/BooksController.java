@@ -1,6 +1,7 @@
 package io.learning.bookshop.books;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
+@Secured("permitAll")
 public class BooksController {
     @Autowired
     BooksService booksService;
