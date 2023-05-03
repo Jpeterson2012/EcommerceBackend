@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Secured("permitAll")
 public class BooksController {
     @Autowired

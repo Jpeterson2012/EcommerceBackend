@@ -40,10 +40,10 @@ public class WebSecurityConfig {
         return new AuthTokenFilter();
     }
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/books/**");
-    }
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer() {
+//        return (web) -> web.ignoring().requestMatchers("/books");
+//    }
 
 
     @Bean
@@ -74,6 +74,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/test/**").permitAll()
+                .requestMatchers("/books/**").permitAll().and().authorizeHttpRequests()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
