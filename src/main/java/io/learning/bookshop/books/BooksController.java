@@ -1,14 +1,17 @@
 package io.learning.bookshop.books;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+
+
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+@CrossOrigin(origins = {"${fe.url}"}, allowCredentials = "true")
 @Secured("permitAll")
 public class BooksController {
     @Autowired

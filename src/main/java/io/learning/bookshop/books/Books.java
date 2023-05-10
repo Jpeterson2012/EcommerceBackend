@@ -14,8 +14,8 @@ public final class Books {
     private int id;
     private String name;
     private String auth;
-    private String price;
-    private float qty;
+    private float price;
+    private String qty;
 
     @OneToMany(mappedBy = "books", cascade = CascadeType.ALL)
     private Set<Purchases> purchases;
@@ -24,7 +24,7 @@ public final class Books {
     private Set<Sales> sales;
 
     public Books() {}
-    public Books(String name, String auth, String price, float qty) {
+    public Books(String name, String auth, float price, String qty) {
         this.name = name;
         this.auth = auth;
         this.price = price;
@@ -34,14 +34,14 @@ public final class Books {
     public int getId() {return id;}
     public String getName() {return name;}
     public String getAuth() {return auth;}
-    public String getPrice() {return price;}
-    public float getQty() {return qty;}
+    public float getPrice() {return price;}
+    public String getQty() {return qty;}
 
     public void setId(int id) {this.id = id;}
     public void setName(String name) {this.name = name;}
     public void setAuth(String auth) {this.auth = auth;}
-    public void setPrice(String price) {this.price = price;}
-    public void setQty(float qty) {this.qty = qty;}
+    public void setPrice(float price) {this.price = price;}
+    public void setQty(String qty) {this.qty = qty;}
 
     @Override
     public boolean equals(Object o) {
