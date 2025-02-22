@@ -1,7 +1,7 @@
 package io.learning.bookshop.books;
 
-import io.learning.bookshop.purchases.Purchases;
-import io.learning.bookshop.sales.Sales;
+//import io.learning.bookshop.purchases.Purchases;
+//import io.learning.bookshop.sales.Sales;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -17,11 +17,11 @@ public final class Books {
     private float price;
     private String qty;
 
-    @OneToMany(mappedBy = "books", cascade = CascadeType.ALL)
-    private Set<Purchases> purchases;
-
-    @OneToMany(mappedBy = "books2",cascade = CascadeType.ALL)
-    private Set<Sales> sales;
+//    @OneToMany(mappedBy = "books", cascade = CascadeType.ALL)
+//    private Set<Purchases> purchases;
+//
+//    @OneToMany(mappedBy = "books2",cascade = CascadeType.ALL)
+//    private Set<Sales> sales;
 
     public Books() {}
     public Books(String name, String auth, float price, String qty) {

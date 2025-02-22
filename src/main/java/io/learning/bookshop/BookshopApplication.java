@@ -1,17 +1,6 @@
 package io.learning.bookshop;
 
-import io.learning.bookshop.books.Books;
 import io.learning.bookshop.books.BooksRepository;
-import io.learning.bookshop.employees.Employees;
-import io.learning.bookshop.employees.EmployeesRepository;
-import io.learning.bookshop.members.Members;
-import io.learning.bookshop.members.MembersRepository;
-import io.learning.bookshop.purchases.Purchases;
-import io.learning.bookshop.purchases.PurchasesRepository;
-import io.learning.bookshop.sales.Sales;
-import io.learning.bookshop.sales.SalesRepository;
-import io.learning.bookshop.suppliers.Suppliers;
-import io.learning.bookshop.suppliers.SuppliersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,12 +10,7 @@ import java.time.LocalDate;
 
 @SpringBootApplication
 public class BookshopApplication  {
-	@Autowired PurchasesRepository purchasesRepository;
 	@Autowired BooksRepository booksRepository;
-	@Autowired EmployeesRepository employeesRepository;
-	@Autowired MembersRepository membersRepository;
-	@Autowired SalesRepository salesRepository;
-	@Autowired SuppliersRepository suppliersRepository;
 
 	public static void main(String[] args) {SpringApplication.run(BookshopApplication.class, args);}}
 

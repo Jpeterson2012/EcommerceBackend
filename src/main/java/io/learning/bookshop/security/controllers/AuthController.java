@@ -33,8 +33,9 @@ import io.learning.bookshop.security.payload.response.*;
 
 
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600, allowCredentials = "true")
+
 @RestController
+@CrossOrigin(origins = {"${fe.url}"}, maxAge = 3600, allowCredentials = "true")
 @RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
