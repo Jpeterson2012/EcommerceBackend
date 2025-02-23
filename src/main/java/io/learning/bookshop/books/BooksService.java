@@ -34,4 +34,5 @@ public class BooksService {
     public void deleteBooks(int id) {
         booksRepository.deleteById(id);
     }
+    public List <Books> findPaginated(int id) {return booksRepository.findPaginated(id);}
 }

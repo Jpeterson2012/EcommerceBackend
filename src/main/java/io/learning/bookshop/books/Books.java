@@ -12,12 +12,12 @@ public final class Books {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private string isbn;
+    private String isbn;
     private String name;
     private String auth;
     private int year;
-    private string publisher;
-    private string image;
+    private String publisher;
+    private String image;
     private float price;
     private String qty;
 
@@ -41,23 +41,23 @@ public final class Books {
 
     public int getId() {return id;}
 
-    public string getIsbn() {return isbn;}
+    public String getIsbn() {return isbn;}
     public String getName() {return name;}
     public String getAuth() {return auth;}
     public int getYear() {return year;}
-    public string getPublisher() {return publisher;}
-    public string getImage() {return image;}
+    public String getPublisher() {return publisher;}
+    public String getImage() {return image;}
     public float getPrice() {return price;}
     public String getQty() {return qty;}
 
     public void setId(int id) {this.id = id;}
 
-    public void setIsbn(string isbn) {this.isbn = isbn;}
+    public void setIsbn(String isbn) {this.isbn = isbn;}
     public void setName(String name) {this.name = name;}
     public void setAuth(String auth) {this.auth = auth;}
     public void setYear(int year) {this.year = year;}
-    public void setPublisher(string publisher) {this.publisher = publisher;}
-    public void setImage(string image) {this.image = image;}
+    public void setPublisher(String publisher) {this.publisher = publisher;}
+    public void setImage(String image) {this.image = image;}
     public void setPrice(float price) {this.price = price;}
     public void setQty(String qty) {this.qty = qty;}
 

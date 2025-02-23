@@ -25,6 +25,11 @@ public class BooksController {
         return booksService.getBook(id);
     }
 
+    @RequestMapping("/books/p/{id}")
+    public List<Books> findPaginated(@PathVariable int id) {
+        return booksService.findPaginated(id);
+    }
+
     @PostMapping("/books")
     public void addBooks(@RequestBody Books books) {
         booksService.addBooks(books);
