@@ -25,10 +25,13 @@ public class BooksController {
         return booksService.getBook(id);
     }
 
-    @RequestMapping("/books/p/{id}")
-    public List<Books> findPaginated(@PathVariable int id) {
-        return booksService.findPaginated(id);
+    @RequestMapping("/books/p")
+    public List<Books> findPaginated(@RequestParam int page, @RequestParam int pageSize) {
+        return booksService.findPaginated(page, pageSize);
     }
+
+    @RequestMapping("/books/total")
+    public int getDBTotal() {return booksService.getDBTotal();}
 
     @PostMapping("/books")
     public void addBooks(@RequestBody Books books) {
