@@ -22,4 +22,5 @@ public class UserService {
                 .forEach(users::add);
         return users;
     }
+    public void setNewRole(int user_id, int role_id){userRepository.setNewRole(user_id, role_id);}
 }
