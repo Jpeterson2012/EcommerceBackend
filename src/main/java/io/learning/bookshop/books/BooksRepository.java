@@ -12,4 +12,5 @@ public interface BooksRepository extends CrudRepository<Books, Integer> {
 
     @Query(value = "SELECT COUNT(*) FROM books", nativeQuery = true)
     int getDBTotal();
+
 }
