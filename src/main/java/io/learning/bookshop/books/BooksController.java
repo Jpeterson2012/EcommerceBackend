@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
-import io.learning.bookshop.security.Services.UserService;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +16,6 @@ import java.util.Optional;
 public class BooksController {
     @Autowired
     BooksService booksService;
-    @Autowired
-    UserService userService;
 
 
     @RequestMapping("/books")
@@ -52,6 +49,4 @@ public class BooksController {
         booksService.deleteBooks(id);
     }
 
-    @RequestMapping("/books/role")
-    public void setNewRole(@RequestParam int userid, @RequestParam int roleid) {userService.setNewRole(userid, roleid);}
 }

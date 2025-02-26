@@ -1,6 +1,6 @@
 package io.learning.bookshop.security.Repositories;
 
-import io.learning.bookshop.security.Models.User;
+import io.learning.bookshop.security.Models.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
-import io.learning.bookshop.security.Models.UserRole;
+
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

@@ -13,8 +13,4 @@ public interface BooksRepository extends CrudRepository<Books, Integer> {
     @Query(value = "SELECT COUNT(*) FROM books", nativeQuery = true)
     int getDBTotal();
 
-    @Modifying
-    @Query(value = "UPDATE user_roles SET role_id = ?2 WHERE user_id = ?1", nativeQuery = true)
-    void setNewRole(int userid, int roleid);
-
 }

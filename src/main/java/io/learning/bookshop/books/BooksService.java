@@ -2,7 +2,6 @@ package io.learning.bookshop.books;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import io.learning.bookshop.security.Repositories.UserRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,9 +13,6 @@ public class BooksService {
 
     @Autowired
     private BooksRepository booksRepository;
-
-    @Autowired
-    UserRepository userRepository;
 
 
     public List<Books> getAllBooks() {
@@ -41,5 +37,4 @@ public class BooksService {
     public List <Books> findPaginated(int page, int pageSize) {return booksRepository.findPaginated(page, pageSize);}
     public int getDBTotal(){return booksRepository.getDBTotal();}
 
-    public void setNewRole(int userid, int roleid){userRepository.setNewRole(userid, roleid);}
 }
