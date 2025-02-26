@@ -5,10 +5,12 @@ import io.learning.bookshop.security.Repositories.Customuser;
 import io.learning.bookshop.security.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.CrossOrigin;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PutMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import io.learning.bookshop.security.Models.*;
 import io.learning.bookshop.security.Repositories.UserRepository;
@@ -54,5 +56,9 @@ public class TestController {
     public List<Customuser> getUsers(){
        return userService.getUsers();
     }
+
+    @PutMapping("/role")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public void setNewRole(@RequestParam int userid, @RequestParam int roleid) {userService.setNewRole(userid, roleid);}
 
 }
