@@ -49,4 +49,7 @@ public class BooksController {
         booksService.deleteBooks(id);
     }
 
+    @RequestMapping("/books/search/{query}")
+    public List<Books> searchBooks(@PathVariable String query) {return booksService.searchBooks(query);}
+
 }

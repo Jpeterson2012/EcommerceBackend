@@ -58,7 +58,7 @@ public class TestController {
     }
 
     @PutMapping("/role/{userid}")
-//    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public void setNewRole(@PathVariable int userid, @RequestBody int roleid) {userService.setNewRole(userid, roleid);}
 
 }
