@@ -1,18 +1,21 @@
 package io.learning.bookshop;
 
-import io.learning.bookshop.books.BooksRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+//import io.learning.bookshop.books.BooksRepository;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 @SpringBootApplication
 public class BookshopApplication  {
-	@Autowired BooksRepository booksRepository;
+//	@Autowired BooksRepository booksRepository;
 
-	public static void main(String[] args) {SpringApplication.run(BookshopApplication.class, args);}}
+	public static void main(String[] args) {SpringApplication.run(BookshopApplication.class, args);}
+
+
+}
 
 //	@Override
 //	public void run(String... args) throws Exception

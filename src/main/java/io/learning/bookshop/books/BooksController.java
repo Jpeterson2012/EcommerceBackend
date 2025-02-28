@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
-
 @RestController
 @CrossOrigin(origins = {"${fe.url}"}, allowCredentials = "true")
 @Secured("permitAll")
 public class BooksController {
+
     @Autowired
     BooksService booksService;
-
 
     @RequestMapping("/books")
     public List<Books> getAllBooks() {return booksService.getAllBooks();};
