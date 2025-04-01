@@ -32,6 +32,9 @@ public class BooksController {
     @RequestMapping("/books/total")
     public int getDBTotal() {return booksService.getDBTotal();}
 
+    @RequestMapping("/books/total/{query}")
+    public int getSearchTotal(@PathVariable String query) {return booksService.getSearchTotal(query);}
+
     @PostMapping("/books")
     public void addBooks(@RequestBody Books books) {
         booksService.addBooks(books);

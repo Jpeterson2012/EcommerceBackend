@@ -13,6 +13,9 @@ public interface BooksRepository extends CrudRepository<Books, Integer> {
     @Query(value = "SELECT COUNT(*) FROM books", nativeQuery = true)
     int getDBTotal();
 
+    @Query(value = "SELECT COUNT(*) FROM books WHERE name LIKE %?1%", nativeQuery = true)
+    int getSearchTotal(String query);
+
     @Query(value = "SELECT * FROM books WHERE name LIKE %?1% LIMIT 0, 20", nativeQuery = true )
     List<Books> searchBooks(String query);
 

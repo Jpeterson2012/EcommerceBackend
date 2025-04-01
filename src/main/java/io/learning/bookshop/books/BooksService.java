@@ -36,6 +36,7 @@ public class BooksService {
     }
     public List <Books> findPaginated(int page, int pageSize) {return booksRepository.findPaginated(page, pageSize);}
     public int getDBTotal(){return booksRepository.getDBTotal();}
+    public int getSearchTotal(String query){return booksRepository.getSearchTotal(query);}
     public List <Books> searchBooks(String query) {return booksRepository.searchBooks(query);}
 
 }
