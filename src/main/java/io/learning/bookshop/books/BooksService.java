@@ -25,18 +25,34 @@ public class BooksService {
     public Optional<Books> getBook(int id) {
         return booksRepository.findById(id);
     }
+
     public void addBooks(Books books) {
         booksRepository.save(books);
     }
+
     public void updateBooks(int id, Books books) {
         booksRepository.save(books);
     }
+
     public void deleteBooks(int id) {
         booksRepository.deleteById(id);
     }
+
     public List <Books> findPaginated(int page, int pageSize) {return booksRepository.findPaginated(page, pageSize);}
+
     public int getDBTotal(){return booksRepository.getDBTotal();}
+
     public int getSearchTotal(String query){return booksRepository.getSearchTotal(query);}
+
+    public int getSearchTotal2(String query){return booksRepository.getSearchTotal2(query);}
+
+    public int getSearchTotal3(String query){return booksRepository.getSearchTotal3(query);}
+
     public List <Books> searchBooks(String query) {return booksRepository.searchBooks(query);}
+
+    public List <Books> searchBooks2(String query) {return booksRepository.searchBooks2(query);}
+
+    public List <Books> searchBooks3(String query) {return booksRepository.searchBooks3(query);}
+
 
 }

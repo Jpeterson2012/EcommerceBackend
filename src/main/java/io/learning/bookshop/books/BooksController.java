@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +14,8 @@ import java.util.Optional;
 @CrossOrigin(origins = {"${fe.url}"}, allowCredentials = "true")
 @Secured("permitAll")
 public class BooksController {
+    private static final Logger logger = LoggerFactory.getLogger(BooksController.class);
+
 
     @Autowired
     BooksService booksService;
@@ -32,8 +36,14 @@ public class BooksController {
     @RequestMapping("/books/total")
     public int getDBTotal() {return booksService.getDBTotal();}
 
-    @RequestMapping("/books/total/{query}")
-    public int getSearchTotal(@PathVariable String query) {return booksService.getSearchTotal(query);}
+    @RequestMapping("/books/total/name")
+    public int getSearchTotal(@RequestParam String query) {return booksService.getSearchTotal(query);}
+
+    @RequestMapping("/books/total/auth")
+    public int getSearchTotal2(@RequestParam String query) {return booksService.getSearchTotal2(query);}
+
+    @RequestMapping("/books/total/isbn")
+    public int getSearchTotal3(@RequestParam String query) {return booksService.getSearchTotal3(query);}
 
     @PostMapping("/books")
     public void addBooks(@RequestBody Books books) {
@@ -50,7 +60,15 @@ public class BooksController {
         booksService.deleteBooks(id);
     }
 
-    @RequestMapping("/books/search/{query}")
-    public List<Books> searchBooks(@PathVariable String query) {return booksService.searchBooks(query);}
+    @RequestMapping("/books/search/name")
+    public List<Books> searchBooks(@RequestParam String query) {
+        logger.info("The path variable 'type' is: {}", query);
+        return booksService.searchBooks(query);
+    }
+    @RequestMapping("/books/search/auth")
+    public List<Books> searchBooks2(@RequestParam String query) {return booksService.searchBooks2(query);}
+
+    @RequestMapping("/books/search/isbn")
+    public List<Books> searchBooks3(@RequestParam String query) {return booksService.searchBooks3(query);}
 
 }
