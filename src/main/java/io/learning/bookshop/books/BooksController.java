@@ -81,9 +81,7 @@ public class BooksController {
     public List<Integer> getFavorites(@PathVariable int id) {return booksService.getFavorites(id);}
 
     @RequestMapping("books/ubooks")
-    public List<Books> getUserBooks(@RequestParam List <Integer> ubooks) {
-        logger.info("The path variable 'type' is: {}", ubooks);
-        return booksService.getUserBooks(ubooks);
+    public List<Books> getUserBooks(@RequestParam List <Integer> ubooks) {return booksService.getUserBooks(ubooks);
     }
 
 }
