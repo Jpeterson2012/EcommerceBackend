@@ -71,4 +71,19 @@ public class BooksController {
     @RequestMapping("/books/search/isbn")
     public List<Books> searchBooks3(@RequestParam String query) {return booksService.searchBooks3(query);}
 
+    @RequestMapping("/books/favorites")
+    public void addFavorites(@RequestParam int user_id, @RequestParam int book_id) {booksService.addFavorites(user_id, book_id);}
+
+    @DeleteMapping("/books/favorites")
+    public void DeleteFavorites(@RequestParam int user_id, @RequestParam int book_id) {booksService.deleteFavorites(user_id, book_id);}
+
+    @RequestMapping("/books/favorites/{id}")
+    public List<Integer> getFavorites(@PathVariable int id) {return booksService.getFavorites(id);}
+
+    @RequestMapping("books/ubooks")
+    public List<Books> getUserBooks(@RequestParam List <Integer> ubooks) {
+        logger.info("The path variable 'type' is: {}", ubooks);
+        return booksService.getUserBooks(ubooks);
+    }
+
 }

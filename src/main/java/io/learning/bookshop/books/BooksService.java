@@ -54,5 +54,13 @@ public class BooksService {
 
     public List <Books> searchBooks3(String query) {return booksRepository.searchBooks3(query);}
 
+    public void addFavorites(int user_id, int book_id) {booksRepository.addFavorites(user_id, book_id);}
+
+    public void deleteFavorites(int user_id, int book_id) {booksRepository.deleteFavorites(user_id, book_id);}
+
+    public List <Integer> getFavorites(int user_id) {return booksRepository.getFavorites(user_id);}
+
+    public List <Books> getUserBooks(List <Integer> ubooks) {return booksRepository.getUserBooks(ubooks);}
+
 
 }
