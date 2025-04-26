@@ -50,4 +50,7 @@ public interface BooksRepository extends CrudRepository<Books, Integer> {
     @Query(value = "SELECT * FROM books WHERE id in (:ubooks)", nativeQuery = true)
     List<Books> getUserBooks(@Param("ubooks") List<Integer> ubooks);
 
+    @Query(value = "INSERT INTO cart VALUES(?1,?2,?3) ON DUPLICATE KEY UPDATE qty = ?3", nativeQuery = true)
+    void addCartData(int user_id, int book_id, int qty);
+
 }

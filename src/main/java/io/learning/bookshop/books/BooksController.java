@@ -62,7 +62,7 @@ public class BooksController {
 
     @RequestMapping("/books/search/name")
     public List<Books> searchBooks(@RequestParam String query) {
-        logger.info("The path variable 'type' is: {}", query);
+//        logger.info("The path variable 'type' is: {}", query);
         return booksService.searchBooks(query);
     }
     @RequestMapping("/books/search/auth")
@@ -83,5 +83,12 @@ public class BooksController {
     @RequestMapping("books/ubooks")
     public List<Books> getUserBooks(@RequestParam List <Integer> ubooks) {return booksService.getUserBooks(ubooks);
     }
+
+    @RequestMapping("books/cart")
+    public void addCartData(@RequestParam int user_id, @RequestParam int book_id, @RequestParam int qty) {
+        logger.info("user_id: {}", user_id);
+        logger.info("cart data: {}", book_id);
+        logger.info("cart data: {}", qty);
+        booksService.addCartData(user_id,book_id, qty);}
 
 }

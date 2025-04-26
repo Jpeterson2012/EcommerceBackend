@@ -62,5 +62,7 @@ public class BooksService {
 
     public List <Books> getUserBooks(List <Integer> ubooks) {return booksRepository.getUserBooks(ubooks);}
 
+    public void addCartData(int user_id, int book_id, int qty) {booksRepository.addCartData(user_id, book_id, qty);}
+
 
 }
