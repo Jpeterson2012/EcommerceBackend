@@ -61,15 +61,16 @@ public class BooksController {
     }
 
     @RequestMapping("/books/search/name")
-    public List<Books> searchBooks(@RequestParam String query) {
-//        logger.info("The path variable 'type' is: {}", query);
-        return booksService.searchBooks(query);
+    public List<Books> searchBooks(@RequestParam String query, @RequestParam int page) {
+//        logger.info("The path variable 'query' is: {}", query);
+//        logger.info("The path variable 'page' is: {}", page);
+        return booksService.searchBooks(query, page);
     }
     @RequestMapping("/books/search/auth")
-    public List<Books> searchBooks2(@RequestParam String query) {return booksService.searchBooks2(query);}
+    public List<Books> searchBooks2(@RequestParam String query, @RequestParam int page) {return booksService.searchBooks2(query, page);}
 
     @RequestMapping("/books/search/isbn")
-    public List<Books> searchBooks3(@RequestParam String query) {return booksService.searchBooks3(query);}
+    public List<Books> searchBooks3(@RequestParam String query, @RequestParam int page) {return booksService.searchBooks3(query, page);}
 
     @RequestMapping("/books/favorites")
     public void addFavorites(@RequestParam int user_id, @RequestParam int book_id) {booksService.addFavorites(user_id, book_id);}

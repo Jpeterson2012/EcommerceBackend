@@ -25,14 +25,14 @@ public interface BooksRepository extends CrudRepository<Books, Integer> {
     @Query(value = "SELECT COUNT(*) FROM books WHERE isbn LIKE %?1%", nativeQuery = true)
     int getSearchTotal3(String query);
 
-    @Query(value = "SELECT * FROM books WHERE name LIKE %?1% LIMIT 0, 20", nativeQuery = true )
-    List<Books> searchBooks(String query);
+    @Query(value = "SELECT * FROM books WHERE name LIKE %?1% LIMIT ?2, 20", nativeQuery = true )
+    List<Books> searchBooks(String query, int page);
 
-    @Query(value = "SELECT * FROM books WHERE auth LIKE %?1% LIMIT 0, 20", nativeQuery = true )
-    List<Books> searchBooks2(String query);
+    @Query(value = "SELECT * FROM books WHERE auth LIKE %?1% LIMIT ?2, 20", nativeQuery = true )
+    List<Books> searchBooks2(String query, int page);
 
-    @Query(value = "SELECT * FROM books WHERE isbn LIKE %?1% LIMIT 0, 20", nativeQuery = true )
-    List<Books> searchBooks3(String query);
+    @Query(value = "SELECT * FROM books WHERE isbn LIKE %?1% LIMIT ?2, 20", nativeQuery = true )
+    List<Books> searchBooks3(String query, int page);
 
     @Transactional
     @Modifying

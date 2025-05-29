@@ -48,11 +48,11 @@ public class BooksService {
 
     public int getSearchTotal3(String query){return booksRepository.getSearchTotal3(query);}
 
-    public List <Books> searchBooks(String query) {return booksRepository.searchBooks(query);}
+    public List <Books> searchBooks(String query, int page) {return booksRepository.searchBooks(query, page);}
 
-    public List <Books> searchBooks2(String query) {return booksRepository.searchBooks2(query);}
+    public List <Books> searchBooks2(String query, int page) {return booksRepository.searchBooks2(query, page);}
 
-    public List <Books> searchBooks3(String query) {return booksRepository.searchBooks3(query);}
+    public List <Books> searchBooks3(String query, int page) {return booksRepository.searchBooks3(query, page);}
 
     public void addFavorites(int user_id, int book_id) {booksRepository.addFavorites(user_id, book_id);}
 
