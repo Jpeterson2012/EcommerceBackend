@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import io.learning.bookshop.books.BooksController;
 import io.learning.bookshop.security.Services.UserDetailsImpl;
+import io.learning.bookshop.security.Services.UserService;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import io.learning.bookshop.security.Models.*;
 import io.learning.bookshop.security.jwt.*;
@@ -33,11 +31,11 @@ import io.learning.bookshop.security.payload.response.*;
 
 
 
-
 @RestController
 @CrossOrigin(origins = {"${fe.url}"}, maxAge = 3600, allowCredentials = "true")
 @RequestMapping("/api/auth")
 public class AuthController {
+
     @Autowired
     AuthenticationManager authenticationManager;
 

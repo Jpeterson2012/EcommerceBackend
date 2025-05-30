@@ -23,4 +23,6 @@ public class UserService {
         return users;
     }
     public void setNewRole(int userid, int roleid){userRepository.setNewRole(userid, roleid);}
+
+    public void resetPassword(int userid, String pw){userRepository.resetPassword(userid,pw);}
 }
