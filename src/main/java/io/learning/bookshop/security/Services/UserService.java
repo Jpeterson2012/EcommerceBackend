@@ -24,5 +24,5 @@ public class UserService {
     }
     public void setNewRole(int userid, int roleid){userRepository.setNewRole(userid, roleid);}
 
-    public void resetPassword(int userid, String pw){userRepository.resetPassword(userid,pw);}
+    public void resetPassword(String user, String pw){userRepository.resetPassword(user,pw);}
 }

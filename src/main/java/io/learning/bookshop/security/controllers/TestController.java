@@ -71,12 +71,20 @@ public class TestController {
     @PreAuthorize("hasRole('ADMIN')")
     public void setNewRole(@PathVariable int userid, @RequestBody int roleid) {userService.setNewRole(userid, roleid);}
 
-    @PutMapping("/pw{userid}")
+//    @PutMapping("/pw{userid}")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public void resetPassword(@PathVariable int userid, @RequestBody String pw){
+//        logger.info("The path variable 'user' is: {}", userid);
+//        logger.info("The path variable 'pw' is: {}", pw);
+//        userService.resetPassword(userid, encoder.encode(pw));
+//    }
+
+    @GetMapping("/pw{userid}")
     @PreAuthorize("hasRole('ADMIN')")
-    public void resetPassword(@PathVariable int userid, @RequestBody String pw){
-        logger.info("The path variable 'user' is: {}", userid);
+    public void resetPassword(@RequestParam String user, @RequestParam String pw){
+        logger.info("The path variable 'user' is: {}", user);
         logger.info("The path variable 'pw' is: {}", pw);
-        userService.resetPassword(userid, encoder.encode(pw));
+        userService.resetPassword(user, encoder.encode(pw));
     }
 
 }
